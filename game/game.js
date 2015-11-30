@@ -106,9 +106,21 @@ RacingGame.prototype.update = function()
 		this.elapsedTime = (Date.now() - this.startTime) / 1000;
 		this.updateHUD();
 
-		if (this.player.object3D.position.z < (-Environment.ROAD_LENGTH / 2 - Car.CAR_LENGTH))
+		var playerpos = this.player.object3D.position;
+
+		if (playerpos.z < (-Environment.ROAD_LENGTH / 2 - Car.CAR_LENGTH))
 		{
 		    this.finishGame();
+		}
+
+		if (playerpos.x > (Environment.ROAD_WIDTH / 2 - (Car.CAR_WIDTH/2)))
+		{
+			playerpos.x -= 1;
+		}
+
+		if (playerpos.x < -(Environment.ROAD_WIDTH / 2 - (Car.CAR_WIDTH/2)))
+		{
+			playerpos.x += 1;
 		}
 	}
 

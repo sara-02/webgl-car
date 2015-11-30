@@ -1,8 +1,3 @@
-// Original code shared in the public domain on the 'net by <anonymous>
-// Further work by vjt@openssl.it - http://sindro.me/
-//
-// Project home page: http://github.com/vjt/canvas-speedometer
-//
 function Speedometer(Element) {
   var options = arguments[1] || {};
 
